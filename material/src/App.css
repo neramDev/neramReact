@@ -1,0 +1,17 @@
+/* Nav bar */
+
+.separator {
+  background: white;
+  width: 25%;
+  opacity: 15%;
+  height: 2px;
+}
+
+@media (min-width: 992px) {
+  .separator {
+    background: white;
+    width: 2px;
+    opacity: 15%;
+    height: 25px;
+  }
+}
