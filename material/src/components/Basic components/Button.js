@@ -51,6 +51,7 @@ const HighlightButton = styled.button`
   &:hover {
     text-decoration: none;
     color: #fff;
+    opacity: 0.7;
   }
   &::before {
     position: absolute;
@@ -60,7 +61,32 @@ const HighlightButton = styled.button`
     width: 30px;
     height: 100%;
     background-color: #fff;
-    animation: shiny;
+    animation: shiny-btn1 3s ease-in-out infinite;
+  }
+  &:active {
+    box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.3),
+      -4px -4px 6px 0 rgba(116, 125, 136, 0.2),
+      inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2),
+      inset 4px 4px 6px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  @-webkit-keyframes shiny-btn1 {
+    0% {
+      -webkit-transform: scale(0) rotate(45deg);
+      opacity: 0;
+    }
+    80% {
+      -webkit-transform: scale(0) rotate(45deg);
+      opacity: 0.5;
+    }
+    81% {
+      -webkit-transform: scale(4) rotate(45deg);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(50) rotate(45deg);
+      opacity: 0;
+    }
   }
 `;
 
