@@ -61,7 +61,7 @@ const HighlightButton = styled.button`
     width: 30px;
     height: 100%;
     background-color: #fff;
-    animation: shiny-btn1 3s ease-in-out infinite;
+    animation: 3s ease-in-out infinite;
   }
   &:active {
     box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.3),
@@ -70,7 +70,7 @@ const HighlightButton = styled.button`
       inset 4px 4px 6px 0 rgba(0, 0, 0, 0.2);
   }
 
-  @-webkit-keyframes shiny-btn1 {
+  @keyframes shiny-btn1 {
     0% {
       -webkit-transform: scale(0) rotate(45deg);
       opacity: 0;
