@@ -1,8 +1,12 @@
 import "./App.css";
-import { createGlobalStyle } from "styled-components";
-import NeramAppBar from "./components/TopNavigationBar/appbar.js";
+import styled, { createGlobalStyle } from "styled-components";
+import AppBar from "./components/TopNavigationBar/appbar.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import SectionBackground from "./components/Sections/Background.js";
+import Clock from "./components/Hero/Clock.js";
+import HeroText from "./components/Hero/HeroText.js";
+import AnimatedWave from "./components/Sections/WaveAnimate.js";
+import ResponsiveAppBar from "./components/TopNavigationBar/NavBarBoot.js";
 
 // Global style
 
@@ -16,17 +20,36 @@ html {
 }
 `;
 
+// Clock Wrapper
+
+const ClockWrapper = styled.div`
+  @media (min-width: 768px) {
+    .col-md-6 {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+  }
+`;
+
 // Main app
 
 function App() {
   return (
     <div className="App">
       <GlobalStyle />
-      <NeramAppBar />
+      {/* <AppBar /> */}
+      <ResponsiveAppBar />
       <>
         <SectionBackground type="grad">
-          <h1>Welcome</h1>
+          <div className="d-flex">
+            <ClockWrapper className="col-md-6 my-auto col-lg-5 col-xl-4 offset-xl-1 order-1">
+              <Clock />
+            </ClockWrapper>
+            <HeroText />
+          </div>
         </SectionBackground>
+        <AnimatedWave />
+
         <SectionBackground type="pink">
           <h1>Welcome</h1>
           <p>This is hero</p>
