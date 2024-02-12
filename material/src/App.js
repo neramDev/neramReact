@@ -7,6 +7,8 @@ import Clock from "./components/Hero/Clock.js";
 import HeroText from "./components/Hero/HeroText.js";
 import AnimatedWave from "./components/Sections/WaveAnimate.js";
 import ResponsiveAppBar from "./components/TopNavigationBar/NavBarBoot.js";
+import SectionTitle from "./components/Sections/Heading.js";
+import SimpleSlider from "./components/Sections/Caraousel.js";
 
 // Global style
 
@@ -18,6 +20,12 @@ body {
 html {
   height: 100%;
 }
+`;
+
+const CenterContainer = styled.div`
+  height: 100%;
+  display: grid;
+  place-items: center;
 `;
 
 // Clock Wrapper
@@ -41,23 +49,25 @@ function App() {
       <ResponsiveAppBar />
       <>
         <SectionBackground type="grad">
-          <div className="d-flex">
-            <ClockWrapper className="col-md-6 my-auto col-lg-5 col-xl-4 offset-xl-1 order-1">
-              <Clock />
-            </ClockWrapper>
-            <HeroText />
-          </div>
+          <CenterContainer>
+            <div className="d-flex">
+              <ClockWrapper className="col-md-6 my-auto col-lg-5 col-xl-4 offset-xl-1 order-1">
+                <Clock />
+              </ClockWrapper>
+              <HeroText />
+            </div>
+          </CenterContainer>
         </SectionBackground>
         <AnimatedWave />
-
         <SectionBackground type="pink">
-          <h1>Welcome</h1>
-          <p>This is hero</p>
+          <SectionTitle
+            title="JEE 2021 Toppers"
+            subtitle="They Climbed to success & We continue to be Ladders"
+          />
+
+          <SimpleSlider />
         </SectionBackground>
-        <SectionBackground color="#fff" height="300px">
-          <h1>Welcome</h1>
-          <p>This is hero</p>
-        </SectionBackground>
+        <SectionBackground></SectionBackground>
       </>
     </div>
   );

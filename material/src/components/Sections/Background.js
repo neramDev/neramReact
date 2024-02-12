@@ -5,8 +5,6 @@ const Section = styled.section`
   width: 100%;
   height: ${({ height }) => height || "750px"};
   text-align: center;
-  display: grid;
-  place-items: center;
 `;
 
 const GradSection = styled(Section)`
